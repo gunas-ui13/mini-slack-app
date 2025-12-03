@@ -20,6 +20,19 @@ A full-stack real-time chat application built for the Full-Stack Internship. It 
 5. **Online Presence:** Real-time tracking of active users (Green dot indicator).
 6. **Responsive UI:** Slack-like interface with sidebar and auto-scrolling chat.
 
+## Setup Backend 
+cd server
+npm install
+ //Create a .env file and add:
+//MONGO_URI=your_mongodb_string
+//PORT=5000
+npm run dev
+
+## Setup Frontend 
+cd ../client
+npm install
+npm run dev
+
 ## ⚙️ Setup & Run Instructions
 To run this project locally:
 
@@ -28,15 +41,4 @@ To run this project locally:
    git clone [https://github.com/gunas-ui13/mini-slack-app.git]
    (https://github.com/gunas-ui13/mini-slack-app.git)
    cd mini-slack-app
-## Setup Backend 
-cd server
-npm install
-# Create a .env file and add:
-# MONGO_URI=your_mongodb_string
-# PORT=5000
-npm run dev
 
-## Setup Frontend 
-cd ../client
-npm install
-npm run dev
