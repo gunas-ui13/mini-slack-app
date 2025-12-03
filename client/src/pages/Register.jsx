@@ -22,7 +22,7 @@ export default function Register() {
     e.preventDefault(); // Stop page from reloading
     try {
       // Send data to Backend
-      const res = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const res = await axios.post("https://mini-slack-app.onrender.com/api/auth/register", formData);
       console.log("Registered:", res.data);
       alert("Registration Successful! Please Login.");
       navigate("/login"); // Redirect to login page

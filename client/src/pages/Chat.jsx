@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://mini-slack-app.onrender.com");
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ export default function Chat() {
   useEffect(() => {
     const fetchChannels = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/channels");
+        const res = await axios.get("https://mini-slack-app.onrender.com/api/channels");
         setChannels(res.data);
       } catch (err) {
         console.error("Error fetching channels:", err);
@@ -55,7 +55,7 @@ export default function Chat() {
 
     const fetchMessages = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/messages/${activeChannel}`);
+        const res = await axios.get(`https://mini-slack-app.onrender.com/api/messages/${activeChannel}`);
         const formattedMessages = res.data.map(msg => ({
           channel: msg.channel,
           author: msg.sender,
@@ -79,7 +79,7 @@ export default function Chat() {
     const channelName = prompt("Enter new channel name:");
     if (channelName) {
       try {
-        const res = await axios.post("http://localhost:5000/api/channels", {
+        const res = await axios.post("https://mini-slack-app.onrender.com/api/channels", {
           name: channelName,
         });
         setChannels([...channels, res.data]); 
