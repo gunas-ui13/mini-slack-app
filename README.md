@@ -28,3 +28,15 @@ To run this project locally:
    git clone [https://github.com/gunas-ui13/mini-slack-app.git]
    (https://github.com/gunas-ui13/mini-slack-app.git)
    cd mini-slack-app
+## Setup Backend 
+cd server
+npm install
+# Create a .env file and add:
+# MONGO_URI=your_mongodb_string
+# PORT=5000
+npm run dev
+
+## Setup Frontend 
+cd ../client
+npm install
+npm run dev
